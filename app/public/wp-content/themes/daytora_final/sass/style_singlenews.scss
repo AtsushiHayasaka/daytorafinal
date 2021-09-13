@@ -1,0 +1,283 @@
+@charset "UTF-8";
+@import "color";
+@import "font-family";
+@import "variable.scss";
+@import "template";
+
+
+/*===========================================================================
+# news
+=========================================================================== */
+.news {
+  background-image: url(../image/back.png);
+  
+  .news-item {
+    margin-top: 30px;
+    .news-image {
+      padding-top: 71.35%;
+      position: relative;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-49%);
+      }
+    }
+    .news-title {
+      background-color: #1a1a1a;
+      color: $color-text-base2;
+      padding: 15px 30px 15px;
+      @include mq(sp) {
+        padding: 4%;
+      }
+      
+      .item-title {
+        font-size: 26px;
+        font-weight: bold;
+        visibility: visible;
+      }
+    }
+    .item-contents {
+      background-color: #fffff0;
+      padding: 30px;
+      font-size: 100%;
+
+      h2 {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      h4 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 16px;
+      }
+      @include mq(sp) {
+        padding: 4%;
+      }
+
+      .contents-description {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.182;
+        @include mq(sp) {
+          margin-bottom: 16px;
+        }
+      }
+
+      .contents-section {
+        .contents-section-title {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 35px 0;
+          @include mq(sp) {
+            margin-top: 16px;
+            margin-bottom: 0;
+          }
+          
+        }
+        .contents-sentence {
+          margin-top: 16px;
+          font-size: 16px;
+          line-height: 1.625;
+        }
+      }
+    }
+  }
+  .pagenation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .pagenation-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 48.15%;
+     
+      &:hover {
+        opacity: .7;
+      }
+      .pagenation-date-title {
+        width: calc(100% - 32.46px - 12.6px);
+        position: relative;
+        .page-title {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        a::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+          content: "";
+          background-color: transparent;
+        }
+      }
+
+      .page-button {
+        background-color: #1a1a1a;
+        width: 32.46px;
+        height: 32.46px;
+        color: #F1C201;
+        padding: 5.3px 12px 9.2px 11.4px;
+        border-radius: 5000px;
+      
+      }
+     }
+    
+    .pagenation-before {
+        flex-direction: row-reverse;
+    } 
+    .pagenation-next {
+      text-align: right;
+    }
+  }
+  
+}
+
+
+  /*===========================================================================
+  # schedule
+  =========================================================================== */
+  .schedule {
+   background-image: url(../image/back.png);
+   
+    line-height: 1.6;
+    .transparent_bg {
+      background-color:rgba(255,255,255,0.29);
+      padding: 30px 72.7px 60px;
+
+      @include mq(sp) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .schedule-wrapper {
+        margin-top: 22.5px;
+
+        .schedule-contents {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          @include mq(lg) {
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+          .date-time {
+            display: flex;
+            justify-content: space-between;
+
+            @include mq(lg) {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .schedule-time {
+              margin-left: 13px;
+              @include mq(lg) {
+                margin-left: 0;
+                font-size: 15px;
+              }
+            }
+          }
+
+          .place-ticket {
+            display: flex;
+            justify-content: space-between;
+            @include mq(lg) {
+              justify-content: center;
+            }
+
+            @include mq(sp) {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .schedule-ticket {
+              margin-left: 28px;
+              @include mq(sp) {
+                margin-left: 0;
+              }              
+            }
+          }
+          .schedule-content {
+            font-size: 20px;
+            color: $color-main;
+            font-weight: bold;
+            @include mq(lg) {
+            }
+
+            a {
+              color: $color-main;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .button-area {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      @include mq(sp) {
+        flex-direction: column;
+        align-items: center;
+      }
+      .schedule-button {
+        @include button($color-main);
+        padding: 24px 31px 23px;
+        margin-left: 30px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        @include mq(sp) {
+          margin-left: 0;
+
+          &:nth-child(2) {
+            margin-top: 20px;
+          }
+        };
+      }
+
+      .move-book {
+        background-color: $color-active;
+      }
+    }
+  }
+
+  /*===========================================================================
+  # footer
+  =========================================================================== */
+  footer {
+    padding: 33px 0;
+    background-color: #333333;
+
+    .copyright {
+      color: $color-text-base2;
+      text-align: center;
+      @include mq(sp) {
+        font-size: 11px;
+      }
+    }
+  }
+  

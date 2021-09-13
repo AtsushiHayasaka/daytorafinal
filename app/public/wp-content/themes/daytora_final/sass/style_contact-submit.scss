@@ -1,0 +1,650 @@
+@charset "UTF-8";
+@import "color";
+@import "font-family";
+@import "variable.scss";
+
+/*===========================================================================
+# 共通css
+=========================================================================== */
+
+body {
+    line-height: 1.75;
+    color: $color-text-base1;
+    font-family: $font-family-japanese;
+    font-size: 12px;
+
+    @include mq(sp) {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $color-text-base1;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  
+  a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  
+  button {
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .container {
+    max-width: 810px;
+    margin: 0 auto;
+
+    @include mq(lg) {
+      padding: 0 4%;
+    }
+  }
+  
+
+  @mixin button($color) {
+    display: block;
+    padding: 25px 30px 21px;
+     background-color: $color;
+     color: $color-text-base2;
+     font-weight: 600;
+     line-height: 1;
+     font-size: 14px;
+
+     @include mq(sp) {
+       font-size: 16px;
+       padding: 9.6px 16px;
+       font-weight: normal;
+       line-height: 1.25;
+     }
+  }
+
+  .hidden-sp {
+    @include mq(sp) {
+      display: none!important;
+    }
+  }
+
+  .only-sp {
+    display: none;
+    @include mq(sp) {
+      display: block;
+    }
+  }
+
+/*===========================================================================
+# header & top bg
+=========================================================================== */
+.big-bg {
+    background-image: url(../image/back.png);
+    padding-bottom: 20px;
+}
+
+/*===========================================================================
+# header
+=========================================================================== */
+header {
+  height: 90px;
+  @include mq(sp) {
+    height: 56px;
+  }
+
+  nav {
+    
+      .header-list {
+          display: flex;
+          justify-content: center;
+
+          @include mq(sp) {
+            justify-content: flex-start;
+          }
+          @include mq(sp) {
+            overflow: auto;
+          }
+
+          .header-list-item {
+              margin-right: 31px;
+              &:last-child {
+                  margin-right: 0;
+              }
+              line-height: 90px;
+              @include mq(lg) {
+                margin-right: 20px;
+              }
+              @include mq(sp) {
+                line-height: 56px;
+              }
+          }
+
+          .header-list-item-link {
+            font-size: 22px;
+            font-weight: bold;
+            color: $color-main;
+            position: relative;
+
+            @include mq(sp) {
+              font-size: 13px;
+            }
+            &::after {
+              position: absolute;
+              content: '';
+              width: 0;
+              height: 2px;
+              background: $color-main;
+              left: 0;
+              bottom: -5px;
+              transition: all 0.3s ease 0s ;
+            }
+
+            &:hover::after {
+              width: 100%;
+            }
+          }
+          .header-list-item-link-top {
+            &::before {
+              content:'トップ';
+              position: absolute;
+              font-size: 12px;
+              top: -18px;
+              line-height: 1;
+              width: 100%;
+              text-align: center;
+              @include mq(lg) {
+                display: none;
+              }
+            }
+            
+          }
+          .header-list-item-link-news {
+            &::before {
+              content:'ニュース';
+              position: absolute;
+              font-size: 12px;
+              top: -18px;
+              line-height: 1;
+              width: 100%;
+              text-align: center;
+              @include mq(lg) {
+                display: none;
+              }
+            }
+          }
+          .header-list-item-link-story {
+            &::before {
+              content:'ストーリー';
+              position: absolute;
+              font-size: 12px;
+              top: -18px;
+              line-height: 1;
+              width: 100%;
+              text-align: center;
+              @include mq(lg) {
+                display: none;
+              }
+            }
+          }
+          .header-list-item-link-comments{
+            &::before {
+              content:'コメント';
+              position: absolute;
+              font-size: 12px;
+              top: -18px;
+              line-height: 1;
+              width: 100%;
+              text-align: center;
+              @include mq(lg) {
+                display: none;
+              }
+            }
+          }
+          .header-list-item-link-cast {
+            &::before {
+              content:'キャスト';
+              position: absolute;
+              font-size: 12px;
+              top: -18px;
+              line-height: 1;
+              width: 100%;
+              text-align: center;
+              @include mq(lg) {
+                display: none;
+              }
+            }
+          }
+          .header-list-item-link-inquiry {
+            &::before {
+              content:'お問い合わせ';
+              position: absolute;
+              font-size: 12px;
+              top: -18px;
+              line-height: 1;
+              width: 100%;
+              text-align: center;
+              @include mq(lg) {
+                display: none;
+              }
+            }
+          }
+      }
+  }
+}
+/*===========================================================================
+# top
+=========================================================================== */
+.top {
+  background-image: url(../image/hero-area.png);
+  background-repeat: no-repeat;
+  background-position: right -51.1px center;
+  padding: 60px 0;
+  color: $color-text-base2;
+  position: relative;
+  @include mq(sp) {
+    padding: 48px 0;
+    background-size: cover;
+    height: 232px;
+    background-position: center center;
+  }
+
+
+  .top-container {
+    max-width: 810px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq(lg) {
+      max-width: 100%;
+      padding: 0 10%;
+    }
+
+    @include mq(sp) {
+      padding: 0 4%;
+      flex-direction: column;
+    }
+
+    .top-title-wrapper {
+      width: 56.79%;
+
+      @include mq(sp) {
+        width: 95%;
+      }
+    }
+
+    .date-place {
+      width: 30.86%;
+
+      @include mq(sp) {
+        width: 60%;
+        margin-top: 30px;
+      }
+    }
+
+   }
+   .top-button-area {
+    max-width: 920px;
+    margin: 0 auto;
+    
+    .move_book {
+      @include button ($color-active);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: calc(50% - 40.35%);
+      transform: translateY(50%);
+
+      @include mq(lg) {
+        margin-right: 10%;
+      }
+      @include mq(sp) {
+       margin-right: 4%;
+      }
+    }
+  }
+}
+
+/*===========================================================================
+# パンクズエリア
+=========================================================================== */
+.breadcrumb {
+  background-image: url(../image/back.png);
+  padding-top: 10px;
+
+  @include mq(sp) {
+    padding-top: 10px;
+  }
+  span {
+    font-weight: bold;
+    @include mq(sp) {
+      font-size: 14px;
+    }
+  }
+}
+/*===========================================================================
+# section common
+=========================================================================== */
+section {
+  padding: 30px 0;
+
+  @include mq(sp) {
+    padding: 48px 0;
+  }
+
+  .section-title {
+    font-family: $font-family-english;
+    font-size: 43px;
+    text-align: center;
+    color: $color-main;
+    line-height: 1;
+  }
+}
+
+/*===========================================================================
+# inquiry
+=========================================================================== */
+
+.inquiry {
+  background-image: url(../image/back.png);
+  .transparent-bg {
+    background-color:rgba(255,255,255,0.29);
+    padding: 30px;
+    margin-top: 25px;
+    
+    .contact-message {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.6666667;
+      @include mq(sp) {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+/*===========================================================================
+# NEWS
+=========================================================================== */
+.news {
+  background-image: url(../images/bg.jpg);
+  .container {
+    position: relative;
+
+    .section-title {
+      position: relative;
+    }
+    .news-item-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      @include mq(sp) {
+        flex-direction: column;
+      }
+      
+      .news-item {
+        width: 31%;
+  
+        @include mq(sp) {
+          width: 100%;
+          margin-top: 24px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        
+  
+        .news-image-area {
+          overflow: hidden;
+          padding-top: 56.25%;
+          position: relative;
+         
+          img {
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+           
+          }
+        }
+  
+        .news-contents {
+          background-color: #fff;
+          min-height: 123px;
+          padding: 14px;
+
+          @include mq(sp) {
+            min-height: 102px;
+          }
+  
+          .date {
+            color: #666666;
+            @include mq(sp) {
+              font-size: 14px;
+            };
+          }
+  
+          .news-content {
+            color: $color-text-base1;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.3125;
+  
+            @include mq(sp) {
+              font-size: 18px
+            }
+          }
+        }
+      }
+    }
+  
+    .under-news-item-wrapper{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 27px;
+  
+  
+      .under-news-item {
+        background-color: #fff;
+        width: 48%;
+  
+        a {
+          display: flex;
+          
+  
+          .under-news-image-area {
+            min-width: 156px;
+            
+            img {
+              height: 100%;
+             
+            }
+          }
+  
+          .under-news-contents {
+            padding: 14px 15px;
+  
+            .date {
+              color: #666666;
+            }
+  
+            .news-content {
+              color: $color-text-base1;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 1.3125;
+            }
+          }
+        }
+      }
+    }
+    .news-detail {
+      @include button($color-active);
+      padding: 13px 12px;
+      font-size: 14px;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      @include mq(lg) {
+        margin-right: 4%;
+      }
+
+      @include mq(sp) {
+        position: static;
+        margin: 0 auto;
+        margin-top: 24px;
+      }
+    }
+  }
+}
+  /*===========================================================================
+  # schedule
+  =========================================================================== */
+  .schedule {
+   background-image: url(../image/back.png);
+   
+    line-height: 1.6;
+    .transparent_bg {
+      background-color:rgba(255,255,255,0.29);
+      padding: 30px 72.7px 60px;
+
+      @include mq(sp) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .schedule-wrapper {
+        margin-top: 22.5px;
+
+        .schedule-contents {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          @include mq(lg) {
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+          .date-time {
+            display: flex;
+            justify-content: space-between;
+
+            @include mq(lg) {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .schedule-time {
+              margin-left: 13px;
+              @include mq(lg) {
+                margin-left: 0;
+                font-size: 15px;
+              }
+            }
+          }
+
+          .place-ticket {
+            display: flex;
+            justify-content: space-between;
+            @include mq(lg) {
+              justify-content: center;
+            }
+
+            @include mq(sp) {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .schedule-ticket {
+              margin-left: 28px;
+              @include mq(sp) {
+                margin-left: 0;
+              }              
+            }
+          }
+          .schedule-content {
+            font-size: 20px;
+            color: $color-main;
+            font-weight: bold;
+            @include mq(lg) {
+            }
+
+            a {
+              color: $color-main;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .button-area {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      @include mq(sp) {
+        flex-direction: column;
+        align-items: center;
+      }
+      .schedule-button {
+        @include button($color-main);
+        padding: 24px 31px 23px;
+        margin-left: 30px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        @include mq(sp) {
+          margin-left: 0;
+
+          &:nth-child(2) {
+            margin-top: 20px;
+          }
+        };
+      }
+
+      .move-book {
+        background-color: $color-active;
+      }
+    }
+  }
+
+  /*===========================================================================
+  # footer
+  =========================================================================== */
+  footer {
+    padding: 33px 0;
+    background-color: #333333;
+
+    .copyright {
+      color: $color-text-base2;
+      text-align: center;
+      @include mq(sp) {
+        font-size: 11px;
+      }
+    }
+  }
+  

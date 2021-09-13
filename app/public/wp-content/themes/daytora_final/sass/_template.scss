@@ -1,0 +1,98 @@
+@import "header";
+
+  /*===========================================================================
+  # top
+  =========================================================================== */
+  .top {
+  background-image: url(../image/hero-area.png);
+  background-repeat: no-repeat;
+  background-position: right -51.1px center;
+  padding: 60px 0;
+  color: $color-text-base2;
+  position: relative;
+  @include mq(sp) {
+    padding: 48px 0;
+    background-size: cover;
+    height: 232px;
+    background-position: center center;
+  }
+  
+  
+  .top-container {
+    max-width: 810px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    @include mq(lg) {
+      max-width: 100%;
+      padding: 0 10%;
+    }
+  
+    @include mq(sp) {
+      padding: 0 4%;
+      flex-direction: column;
+    }
+  
+    .top-title-wrapper {
+      width: 56.79%;
+  
+      @include mq(sp) {
+        width: 95%;
+      }
+    }
+  
+    .date-place {
+      width: 30.86%;
+  
+      @include mq(sp) {
+        width: 60%;
+        margin-top: 30px;
+      }
+    }
+  
+   }
+   .top-button-area {
+   
+    
+    .move_book {
+      @include button ($color-active);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: calc(50% - 405px);
+      transform: translateY(50%);
+  
+      @include mq(lg) {
+        margin-right: 10%;
+      }
+      @include mq(sp) {
+       margin-right: 4%;
+      }
+    }
+  }
+  }
+  /*===========================================================================
+  # パンクズエリア
+  =========================================================================== */
+  @import "breadcrumb";
+  
+  /*===========================================================================
+  # section common
+  =========================================================================== */
+  section {
+    padding: 30px 0;
+  
+    @include mq(sp) {
+      padding: 48px 0;
+    }
+  
+    .section-title {
+      font-family: $font-family-english;
+      font-size: 43px;
+      text-align: center;
+      color: $color-main;
+      line-height: 1;
+    }
+  }

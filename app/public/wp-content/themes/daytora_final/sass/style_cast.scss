@@ -1,0 +1,365 @@
+@charset "UTF-8";
+@import "color";
+@import "font-family";
+@import "variable.scss";
+@import "template";
+
+
+/*===========================================================================
+# cast
+=========================================================================== */
+.cast {
+  background: linear-gradient(180deg
+  , transparent 0%, transparent 215px, #FFFFF0 215px, #FFFFF0 100%);
+  position: relative;
+  height: 100%;
+  
+
+  .bg {
+    background-image: url(../image/back.png);
+    height: 215px;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .cast-wrapper {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+
+    @include mq(sp) {
+      flex-direction: column;
+      
+    }
+
+    .cast-contents {
+      width: 30.86%;
+
+      @include mq(sp) {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 24px;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .cast-image {
+        
+        img {
+          display: block;
+          width: 220px;
+          height: 220px;
+          @include mq(lg) {
+            width: 195px;
+            height: 195px;
+          }
+          @include mq(sp) {
+            width: 230px;
+            height: 230px;
+          }
+          border-radius: 500px;
+          margin: 0 auto;
+        }
+      }
+      .cast-above {
+        margin-top: 33px;
+        text-align: center;
+        @include mq(sp) {
+          
+        }
+        .cast-role {
+          font-size: 16px;
+        }
+        .cast-name {
+          font-size: 18px;
+          font-weight: bold;
+
+          @include mq(sp) {
+            font-size: 28px;
+          }
+        }
+        .cast-job {
+          display: block;
+          margin-top: 8px;
+          color: #666666;
+          line-height: 1;
+          @include mq(sp) {
+            font-size: 13px;
+          }
+        }
+      }
+      
+      .cast-under {
+        margin-top: 12px;
+
+      }
+    }
+  }
+ 
+  }
+
+  /*===========================================================================
+  # cast-table
+  =========================================================================== */
+  .cast-table-first {
+    padding: 60px;
+    background-image: url(../image/back.png);
+    @include mq(lg) {
+      padding: 60px 0;
+    }
+    @include mq(sp) {
+      padding: 48px 0;
+    }
+    .cast-table-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include mq(sp) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      gap: 30px;
+      
+
+      .cast-grid-item {
+        display: flex;
+        justify-content: space-between;
+        @include mq(lg) {
+          flex-direction: column;
+        }
+        .cast-item-left {
+          width: 130px;
+          height: 130px;
+          @include mq(lg) {
+            height: auto;
+            margin: 0 auto;
+            margin-top: 24px;
+            width: 53.333%;
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+          
+          img {
+            border-radius: 5000px;
+            height: 100%;
+          }
+        }
+
+        .cast-item-right {
+          width: calc(100% - 140px);
+          @include mq(lg) {
+            width: 100%;
+            margin-top: 16px;
+          }
+          
+          .cast-item-role {
+            font-size: 16px;
+            @include mq(lg) {
+              display: block;
+              text-align: center;
+            }
+          }
+          .cast-item-name  {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1;
+            @include mq(lg) {
+              text-align: center;
+            }
+            @include mq(sp) {
+              font-size: 28px;
+            }
+          }
+          .cast-job {
+            display: block;
+            margin: 10px 0;
+            @include mq(lg) {
+              font-size: 13px;
+              text-align: center;
+            }
+          }
+          .cast-item-content {
+            @include mq(lg) {
+              width: 70%;
+              margin: 0 auto;
+            }
+          }
+          
+        }
+        
+      }
+    }
+  }
+
+  /*===========================================================================
+  # cast-table-second
+  =========================================================================== */
+  .cast-table-second {
+    background-color: #fffff0;
+    padding: 60px 0;
+    .cast-grid {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include mq(lg) {
+        grid-template-columns: repeat(2.1fr);
+      }
+      @include mq(sp) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      gap: 30px;
+
+      .cast-grid-item {
+        text-align: center;
+
+        .cast-role {
+          font-size: 16px;
+        }
+        .cast-name {
+          font-size: 22px;
+          font-weight: bold;
+        }
+        .cast-job {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  /*===========================================================================
+  # schedule
+  =========================================================================== */
+  .schedule {
+   background-image: url(../image/back.png);
+   padding-top: 60px;
+   
+    line-height: 1.6;
+    .transparent_bg {
+      background-color:rgba(255,255,255,0.29);
+      padding: 30px 72.7px 60px;
+
+      @include mq(sp) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .schedule-wrapper {
+        margin-top: 22.5px;
+
+        .schedule-contents {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          @include mq(lg) {
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+          .date-time {
+            display: flex;
+            justify-content: space-between;
+
+            @include mq(lg) {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .schedule-time {
+              margin-left: 13px;
+              @include mq(lg) {
+                margin-left: 0;
+                font-size: 15px;
+              }
+            }
+          }
+
+          .place-ticket {
+            display: flex;
+            justify-content: space-between;
+            @include mq(lg) {
+              justify-content: center;
+            }
+
+            @include mq(sp) {
+              flex-direction: column;
+              align-items: center;
+            }
+
+            .schedule-ticket {
+              margin-left: 28px;
+              @include mq(sp) {
+                margin-left: 0;
+              }              
+            }
+          }
+          .schedule-content {
+            font-size: 20px;
+            color: $color-main;
+            font-weight: bold;
+            @include mq(lg) {
+            }
+
+            a {
+              color: $color-main;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .button-area {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      @include mq(sp) {
+        flex-direction: column;
+        align-items: center;
+      }
+      .schedule-button {
+        @include button($color-main);
+        padding: 24px 31px 23px;
+        margin-left: 30px;
+        font-size: 13px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        @include mq(sp) {
+          margin-left: 0;
+
+          &:nth-child(2) {
+            margin-top: 20px;
+          }
+        };
+      }
+
+      .move-book {
+        background-color: $color-active;
+      }
+    }
+  }
+
+  /*===========================================================================
+  # footer
+  =========================================================================== */
+  footer {
+    padding: 33px 0;
+    background-color: #333333;
+
+    .copyright {
+      color: $color-text-base2;
+      text-align: center;
+      @include mq(sp) {
+        font-size: 11px;
+      }
+    }
+  }
+  

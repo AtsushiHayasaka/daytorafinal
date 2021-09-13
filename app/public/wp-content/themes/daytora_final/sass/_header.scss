@@ -1,0 +1,489 @@
+/*===========================================================================
+# 共通css
+=========================================================================== */
+
+body {
+    line-height: 1.75;
+    color: $color-text-base1;
+    font-family: $font-family-japanese;
+    font-size: 12px;
+
+    @include mq(sp) {
+      line-height: 1.6;
+      font-size:16px;
+    }
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $color-text-base1;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+  
+  a:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  
+  button {
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .container {
+    max-width: 810px;
+    margin: 0 auto;
+
+    @include mq(lg) {
+      padding: 0 4%;
+    }
+  }
+  
+
+  @mixin button($color) {
+    display: block;
+    padding: 25px 30px 21px;
+     background-color: $color;
+     color: $color-text-base2;
+     font-weight: 600;
+     line-height: 1;
+     font-size: 14px;
+     border: none;
+
+     @include mq(sp) {
+       font-size: 16px;
+       padding: 9.6px 16px;
+       font-weight: normal;
+       line-height: 1.25;
+     }
+  }
+
+  .hidden-sp {
+    @include mq(sp) {
+      display: none!important;
+    }
+  }
+
+  .only-sp {
+    display: none;
+    @include mq(sp) {
+      display: block;
+    }
+  }
+
+/*===========================================================================
+# header & top bg
+=========================================================================== */
+.big-bg {
+    background-image: url(../image/back.png);
+    padding-bottom: 20px;
+}
+
+/*===========================================================================
+# header
+=========================================================================== */
+header {
+    padding: 25px 0 25px;
+    @include mq(sp) {
+      height: 56px;
+      padding: 0;
+    }
+  .container {
+
+    nav {
+      
+        .header-list {
+            display: flex;
+            justify-content: center;
+            line-height: 1;
+            @include mq(sp) {
+              display: none;
+            }
+            .menu-item {
+                margin-right: 31px;
+                position: relative;
+
+                &:first-child {      
+                  &::before {
+                    content:'トップ';
+                    display: block;
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    line-height: 1;
+                    width: 100%;
+                    text-align: center;
+                    color: $color-main;
+                    @include mq(lg) {
+                      display: none;
+                    }
+                  }
+                }
+                &:nth-child(2) {      
+                  &::before {
+                    content:'ニュース';
+                    display: block;
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    line-height: 1;
+                    width: 100%;
+                    text-align: center;
+                    color: $color-main;
+                    @include mq(lg) {
+                      display: none;
+                    }
+                  }
+                }
+                &:nth-child(3) {      
+                  &::before {
+                    content:'ストーリー';
+                    display: block;
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    line-height: 1;
+                    width: 100%;
+                    text-align: center;
+                    color: $color-main;
+                    @include mq(lg) {
+                      display: none;
+                    }
+                  }
+                }
+                &:nth-child(4) {      
+                  &::before {
+                    content:'著名人コメント';
+                    display: block;
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    line-height: 1;
+                    width: 100%;
+                    text-align: center;
+                    color: $color-main;
+                    @include mq(lg) {
+                      display: none;
+                    }
+                  }
+                }
+                &:nth-child(5) {      
+                  &::before {
+                    content:'キャスト';
+                    display: block;
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    line-height: 1;
+                    width: 100%;
+                    text-align: center;
+                    color: $color-main;
+                    @include mq(lg) {
+                      display: none;
+                    }
+                  }
+                }
+              
+                &:last-child {
+                    margin-right: 0;
+                    &::before {
+                      content:'問い合わせ';
+                      display: block;
+                      font-size: 12px;
+                      font-weight: bold;
+                      margin-bottom: 6px;
+                      line-height: 1;
+                      width: 100%;
+                      text-align: center;
+                      color: $color-main;
+                      @include mq(lg) {
+                        display: none;
+                      }
+                    }
+                }
+                @include mq(lg) {
+                  margin-right: 20px;
+                }
+                @include mq(sp) {
+                  line-height: 56px;
+                }
+                a {
+                  font-size: 22px;
+                  font-weight: bold;
+                  color: $color-main;
+                  position: relative;
+                  
+                  @include mq(sp) {
+                    font-size: 13px;
+                  }
+                  
+               
+                  &::after {
+                    position: absolute;
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    background: $color-main;
+                    left: 0;
+                    bottom: -5px;
+                    transition: all 0.3s ease 0s ;
+                  }
+    
+                  &:hover::after {
+                    width: 100%;
+                  }
+                }
+            }
+
+           
+            .header-list-item-link-top {
+              &::before {
+                content:'トップ';
+                position: absolute;
+                font-size: 12px;
+                top: -18px;
+                line-height: 1;
+                width: 100%;
+                text-align: center;
+                @include mq(lg) {
+                  display: none;
+                }
+              }
+              
+            }
+            .header-list-item-link-news {
+              &::before {
+                content:'ニュース';
+                position: absolute;
+                font-size: 12px;
+                top: -18px;
+                line-height: 1;
+                width: 100%;
+                text-align: center;
+                @include mq(lg) {
+                  display: none;
+                }
+              }
+            }
+            .header-list-item-link-story {
+              &::before {
+                content:'ストーリー';
+                position: absolute;
+                font-size: 12px;
+                top: -18px;
+                line-height: 1;
+                width: 100%;
+                text-align: center;
+                @include mq(lg) {
+                  display: none;
+                }
+              }
+            }
+            .header-list-item-link-comments{
+              &::before {
+                content:'コメント';
+                position: absolute;
+                font-size: 12px;
+                top: -18px;
+                line-height: 1;
+                width: 100%;
+                text-align: center;
+                @include mq(lg) {
+                  display: none;
+                }
+              }
+            }
+            .header-list-item-link-cast {
+              &::before {
+                content:'キャスト';
+                position: absolute;
+                font-size: 12px;
+                top: -18px;
+                line-height: 1;
+                width: 100%;
+                text-align: center;
+                @include mq(lg) {
+                  display: none;
+                }
+              }
+            }
+            .header-list-item-link-inquiry {
+              &::before {
+                content:'お問い合わせ';
+                position: absolute;
+                font-size: 12px;
+                top: -18px;
+                line-height: 1;
+                width: 100%;
+                text-align: center;
+                @include mq(lg) {
+                  display: none;
+                }
+              }
+            }
+        }
+    }
+     /*css drawer*/
+@include mq(sp) {
+  
+  .drawer-hamburger {
+    position: fixed;
+    z-index: 4;
+    top: 21px;
+    width: 30px; /*ハンバーガーの横幅*/
+    right: 0;
+    margin-right: 4%;/*container幅に合わせる*/
+    display: block;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    padding: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    
+  }
+  
+  .drawer-hamburger .hamburger-icon {
+    z-index: 9999;
+    margin-right: 0;
+    right: 0;
+  }
+  
+  /*ハンバーガーいじる*/
+  .drawer-hamburger .navbar_toggle_icon {
+    position: relative;
+    display: block;
+    height: 3px;
+    width: 22px;
+    background: $color-background;
+    -webkit-transition: ease .5s;
+    transition: ease .5s;
+  }
+  
+  /*ハンバーガーの間隔*/
+  .drawer-hamburger .navbar_toggle_icon:nth-child(1) {
+    top: 0;
+  }
+  
+  .drawer-hamburger .navbar_toggle_icon:nth-child(2) {
+    margin: 5px 0;
+  }
+  
+  .drawer-hamburger .navbar_toggle_icon:nth-child(3) {
+    top: 0;
+  }
+  
+  /*OPEN時の動き*/
+  .drawer-hamburger .navbar_toggle.open .navbar_toggle_icon:nth-child(1) {
+    top: 8px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #fff;
+  }
+  
+  .drawer-hamburger .navbar_toggle.open .navbar_toggle_icon:nth-child(2) {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  
+  .drawer-hamburger .navbar_toggle.open .navbar_toggle_icon:nth-child(3) {
+    top: -8px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color: #fff;
+  }
+  
+  .drawer-hamburger .active {
+    display: block;
+  }
+  
+  .drawer--right.drawer-open .drawer-hamburger {
+    right: 55%;
+  }
+  
+  /*drawer nav の大きさを変えたときにはみ出たやつの調整*/
+  .drawer--right .drawer-nav {
+      
+  }
+  
+  .drawer-nav {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    overflow: hidden;
+    width: 200px;
+    height: 100%;
+    color: #707070;
+    background-image: url(../image/back.png);
+  }
+  
+  .drawer-nav li {
+    padding: 20px 0;
+    padding-left: 20px;
+    border-bottom: 1px dashed #707070;
+    font-family: $font-family-english;
+    a {
+      font-size: 1.5rem;
+    
+      margin-left: .75rem;
+      text-decoration: none;
+      color: $color-main;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 2px;
+        background: $color-main;
+        left: 0;
+        bottom: -5px;
+        transition: all 0.3s ease 0s ;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+  
+  
+  .drawer-overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+  }
+
+  .drawer-overlay .open {
+    display: block!important;
+  }
+  .drawer-open .drawer-overlay {
+    display: block!important;
+}
+
+  
+}
+  }
+}

@@ -1,0 +1,30 @@
+.breadcrumb {
+    background-image: url(../image/back.png);
+    padding-top: 10px;
+    
+  
+    @include mq(sp) {
+      .container {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 5px;
+        margin: 0 4%;
+      }
+      padding-top: 10px;
+    }
+    
+    span {
+      font-weight: bold;
+      text-transform: uppercase;
+      @include mq(sp) {
+        font-size: 14px;
+      }
+    }
+    .fa-angle-right {
+      padding: 0 5px;
+    }
+  }
